@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="welcomePage.html">
+        <div class="mb-3">
+          <label>Email</label>
+          <input id="email" type="email" name="email" placeholder="please enter your email"> <br/>
+          <label>Address</label>
+          <input id="address" type="text" name="address" placeholder="please enter your address"> <br/> 
+          <label>Mobile</label>
+          <input id="mobile" type="number" name="mobile" placeholder="please enter your mobile number"> <br/>
+        </div>
+        <div class="mb-3 form-check">
+          <input id="maleChecked" value="Male" name="maleChecked" type="checkbox">
+          <label>Male</label>
+        </div> 
+        <div class="mb-3 form-check">
+            <input  id="femaleChecked" value="Female" name="femaleChecked" type="checkbox">
+            <label>Female</label>
+          </div>
+        <button id="button" type="submit" class="btn btn-primary">Submit</button>
+      </form> 
+
+<script> 
+  const myEmail = document.getElementById("email")  
+  const myAddress = document.getElementById("address")  
+  const myNumber = document.getElementById("mobile")  
+  const female = document.getElementById("femaleChecked")  
+  const male = document.getElementById("maleChecked") 
+  const btn = document.getElementById("button") 
+
+  btn.addEventListener("click", ()=>{ 
+    myEmail.value != "" &&  myAddress.value != 0 && myNumber.value != 0 && (male.checked || female.checked) ?
+    console.log("Form submitted") 
+    : window.alert("You have to fill all the fields !")    
+  }) 
+
+  
+</script>
+</body>
+</html>

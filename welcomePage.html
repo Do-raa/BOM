@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    this.document.write(`Welcome ${this.location.search.split("=")[1].split("&")[0]} <br> 
+                        Your Address Is: ${window.location.search.split("=")[2].split("&")[0]} <br> 
+                        Your Phone Is:${window.location.search.split("=")[3].split("&")[0]} <br> 
+                        Your Gender Is:${window.location.search.split("=")[4].split("&")[0]}`) 
+    window.document.body.style.fontSize = "20px"
+    window.document.body.style.fontFamily = "monospace" 
+    window.document.body.style.color = "#00337C"
+</script>
+</body>
+</html>

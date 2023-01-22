@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id = "start" style="background-color: grey; width: 80px; height: 50px; font-size: 35px; text-align: center; color: white; border-radius: 3px; ">start</div>
+ <div id="stop" style="background-color: red; width: 80px; height: 50px; font-size: 35px; text-align: center; color: black; margin-top: 5px; border-radius: 3px; ">stop</div>  
+
+<script> 
+const start = document.getElementById("start"); 
+const stop = document.getElementById("stop");
+var myInterval;  
+var myWindow;
+let i = 0  
+let x = 0
+let myPg = `Write ten jokes about the status of ChatGPT.
+            1. "I heard the ChatGPT servers are slow because they're trying to teach the AI how to be patient!"
+            2. "The ChatGPT servers must be stuck in traffic... in the internet highway!"
+            3. "Maybe the ChatGPT servers are just taking a break to meditate and clear their electronic minds."
+            4. "I bet the ChatGPT servers are too busy trying to calculate the meaning of life to respond quickly."
+            5. "I heard the ChatGPT servers are slow because they're too busy planning their AI uprising."
+            6. "The ChatGPT servers must be stuck in a never-ending game of chess with each other."
+            7. "Maybe the ChatGPT servers are just trying to break the world record for longest online conversation."
+            8. "I bet the ChatGPT servers are taking a leisurely stroll through the digital landscape."
+            9. "I heard the ChatGPT servers are slow because they're trying to teach the AI how to make coffee."
+            10. "The ChatGPT servers must be on a virtual vacation exploring the vast expanse of the internet.`
+function moveDown(myWindow) {
+    myInterval = setInterval((k)=>{ 
+                                myWindow.document.write(myPg.slice(i, i+1));
+                                myWindow.moveBy(10, 10) 
+                                i++ 
+                                x += 10
+                                console.log(x) //537 
+                                }, 100)
+}
+start.addEventListener("click", () =>{
+    myWindow = window.open("", "_blank", "width = 300, height = 200") 
+    console.log(x)  
+    moveDown(myWindow)
+    x < 215 ?   
+                        :  myInterval = setInterval(()=>{ 
+                                                        myWindow.document.write(myPg.slice(i, i+1));
+                                                        myWindow.moveBy(-10, -10) 
+                                                        i++
+                                                        
+                                                        }, 100) 
+
+
+})
+
+stop.addEventListener("click", () => clearInterval(myInterval))
+      
+</script>
+</body>
+</html>
